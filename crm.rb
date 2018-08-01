@@ -12,6 +12,9 @@ end
 get '/contacts' do
   erb :index
 
+get '/about' do
+  erb :about
+
 
 after do
   ActiveRecord::Base.connection.close
