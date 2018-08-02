@@ -14,7 +14,7 @@ get '/about' do
 end
 
 get '/contacts' do
-  # @contact = Contact.all
+  @contact = Contact.all
   erb :contacts
 end
 
