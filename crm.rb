@@ -1,5 +1,6 @@
-require_relative 'contact'
 require 'sinatra'
+require_relative 'contact'
+
 
 get '/' do
   redirect to('/home')
@@ -12,9 +13,17 @@ end
 
 get '/contacts' do
   @title = 'Contacts'
+
   @contacts = Contact.all
+
   erb :contacts
 end
+
+get '/contacts/:id' do
+  id = params[:id]
+  @contact = Contact.find(id)
+
+  erb :contact
 
 get '/about' do
   @title - 'About Us'
@@ -24,4 +33,4 @@ end
 
 after do
   ActiveRecord::Base.connection.close
-ends
+end
