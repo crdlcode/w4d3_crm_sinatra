@@ -1,11 +1,31 @@
-<h1>Contacts</h1>
-
-<ul>
-  <% @contacts.each do |contact| %>
-    <li>
-      <a href="/contacts/<%= contact.id %>">
-        <%= contact.name %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CONTACTS</title>
+  </head>
+  <body>
+    <header>
+      <h1>Contacts</h1>
+      <nav>
+        <ul>
+          <li><a href="/home"></a></li>
+          <li><a href="/contact"></a></li>
+          <li><a href="/index"></a></li>
+          <li><a href="/about"></a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="contact-section" class="contacts">
+       <% @contacts.each do |contact| %>
+         <ul>
+             <li><%= contact.full_name %></li>
+             <li><%= contact.email %></li>
+             <li><%= contact.note %></li>
+         </ul>
+        <% end %>
+       </section>
+    </main>
+  </body>
+</html>

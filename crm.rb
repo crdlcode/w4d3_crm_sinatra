@@ -1,34 +1,23 @@
-require 'sinatra'
 require_relative 'contact'
-
+require 'sinatra'
 
 get '/' do
-  redirect to('/home')
+  redirect to ('/index')
 end
 
 get '/home' do
-  @title = 'Home'
   erb :index
 end
 
+get '/about' do
+  erb :about
+end
+
 get '/contacts' do
-  @title = 'Contacts'
-
-  @contacts = Contact.all
-
+  # @contact = Contact.all
   erb :contacts
 end
 
-get '/contacts/:id' do
-  id = params[:id]
-  @contact = Contact.find(id)
-
-  erb :contact
-
-get '/about' do
-  @title - 'About Us'
-  erb :about
-end
 
 
 after do
