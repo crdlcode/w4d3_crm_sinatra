@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="/style.css">
+  <title><%= @title %></title>
+</head>
+<body>
+  <header>
+
+    <nav class="nav">
+      <ul class="top-nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/add-contact">Add Contact</a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    &copy; 2018 Bitmaker Labs
+  </footer>
+</body>
+</html>
